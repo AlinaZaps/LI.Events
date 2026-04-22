@@ -1,0 +1,11 @@
+-- CreateEnum
+CREATE TYPE "EventCategory" AS ENUM ('CONFERENCE', 'SIDE_EVENT', 'HACKATHON', 'BD_DINNER', 'SPONSORSHIP');
+
+-- CreateEnum
+CREATE TYPE "EventStatus" AS ENUM ('PAST', 'UPCOMING', 'LIVE');
+
+-- AlterTable
+ALTER TABLE "Event" ADD COLUMN     "budgetCents" INTEGER NOT NULL DEFAULT 0,
+ADD COLUMN     "category" "EventCategory" NOT NULL DEFAULT 'CONFERENCE',
+ADD COLUMN     "lifecycleStatus" "EventStatus" NOT NULL DEFAULT 'UPCOMING',
+ADD COLUMN     "spentCents" INTEGER NOT NULL DEFAULT 0;

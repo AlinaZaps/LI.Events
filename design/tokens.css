@@ -1,0 +1,184 @@
+/*
+ * Design tokens — extracted from bd_event_platform_{branded,light}.html refs.
+ * Light is the default theme; dark is applied via `.dark` on <html> or <body>.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+:root {
+  /* ---------- Brand (theme-invariant) ---------- */
+  --brand-accent: #5C67FF;
+  --brand-pink-raw: #F7C2FF;
+
+  /* ---------- Typography: families ---------- */
+  --font-display: 'Syne', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+
+  /* ---------- Typography: weights ---------- */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ---------- Typography: sizes ---------- */
+  --fs-9: 9px;    /* micro badges */
+  --fs-10: 10px;  /* caps labels, pills, badges */
+  --fs-11: 11px;  /* meta, stat sub, role captions */
+  --fs-12: 12px;  /* secondary / meta */
+  --fs-13: 13px;  /* body default */
+  --fs-14: 14px;  /* base */
+  --fs-15: 15px;  /* section title, event name */
+  --fs-16: 16px;  /* calendar month */
+  --fs-17: 17px;  /* sidebar logo */
+  --fs-20: 20px;  /* topbar title */
+  --fs-22: 22px;  /* detail panel name */
+  --fs-26: 26px;  /* stat value */
+  --fs-28: 28px;  /* budget percent */
+
+  /* ---------- Typography: tracking ---------- */
+  --tracking-tight: 0.05em;
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.1em;
+
+  /* ---------- Radius ---------- */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 7px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 20px;
+  --radius-round: 50%;
+
+  /* ---------- Spacing scale (px) ---------- */
+  --space-1: 4px;
+  --space-2: 6px;
+  --space-3: 8px;
+  --space-4: 10px;
+  --space-5: 12px;
+  --space-6: 14px;
+  --space-7: 16px;
+  --space-8: 18px;
+  --space-9: 20px;
+  --space-10: 24px;
+  --space-11: 28px;
+
+  /* ---------- Transition ---------- */
+  --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 0.15s;
+  --dur-med: 0.2s;
+  --dur-slow: 0.25s;
+}
+
+/* ============================================================
+   LIGHT THEME (default) — from bd_event_platform_light.html
+   ============================================================ */
+:root,
+:root[data-theme='light'],
+.light {
+  /* Surfaces */
+  --bg: #f5f4ff;
+  --surface: #ffffff;
+  --surface-2: #f0efff;
+  --surface-3: #e8e7ff;
+
+  /* Borders */
+  --border: rgba(92, 103, 255, 0.10);
+  --border-strong: rgba(92, 103, 255, 0.22);
+
+  /* Text */
+  --text: #16142e;
+  --muted: #7b78a8;
+
+  /* Accent */
+  --accent: #5C67FF;
+  --accent-hover: #4450e8;
+  --accent-dim: rgba(92, 103, 255, 0.08);
+
+  /* Semantic */
+  --pink: #d966f5;
+  --pink-dim: rgba(217, 102, 245, 0.08);
+  --green: #00a36e;
+  --green-dim: rgba(0, 163, 110, 0.08);
+  --amber: #c47f00;
+  --amber-dim: rgba(196, 127, 0, 0.08);
+  --red: #d63b5a;
+
+  /* Overlays & shadows */
+  --overlay: rgba(22, 20, 46, 0.30);
+  --shadow-card: 0 4px 20px rgba(92, 103, 255, 0.10);
+  --shadow-card-hover: 0 6px 24px rgba(92, 103, 255, 0.10);
+  --shadow-primary: 0 2px 12px rgba(92, 103, 255, 0.30);
+  --shadow-panel: -8px 0 32px rgba(92, 103, 255, 0.08);
+  --shadow-glow: none;
+
+  /* Gradients */
+  --grad-brand: linear-gradient(135deg, #5C67FF, #F7C2FF);
+  --grad-bar: linear-gradient(90deg, #5C67FF, #d966f5);
+}
+
+/* ============================================================
+   DARK THEME — from bd_event_platform_branded.html
+   ============================================================ */
+:root[data-theme='dark'],
+.dark {
+  --bg: #0a0a12;
+  --surface: #10101c;
+  --surface-2: #17172a;
+  --surface-3: #1e1e35;
+
+  --border: rgba(92, 103, 255, 0.12);
+  --border-strong: rgba(92, 103, 255, 0.25);
+
+  --text: #f4f0ff;
+  --muted: #8880aa;
+
+  --accent: #5C67FF;
+  --accent-hover: #8891ff;
+  --accent-dim: rgba(92, 103, 255, 0.15);
+
+  --pink: #F7C2FF;
+  --pink-dim: rgba(247, 194, 255, 0.15);
+  --green: #6affcb;
+  --green-dim: rgba(106, 255, 203, 0.12);
+  --amber: #ffd97a;
+  --amber-dim: rgba(255, 217, 122, 0.12);
+  --red: #ff8fa3;
+
+  --overlay: rgba(0, 0, 0, 0.60);
+  --shadow-card: 0 6px 24px rgba(92, 103, 255, 0.10);
+  --shadow-card-hover: 0 6px 24px rgba(92, 103, 255, 0.20);
+  --shadow-primary: 0 0 18px rgba(92, 103, 255, 0.35);
+  --shadow-panel: none;
+  --shadow-glow: 0 0 18px rgba(92, 103, 255, 0.25);
+
+  --grad-brand: linear-gradient(135deg, #5C67FF, #F7C2FF);
+  --grad-bar: linear-gradient(90deg, #5C67FF, #F7C2FF);
+}
+
+/* ============================================================
+   Base type styles — optional helpers the app can opt into
+   ============================================================ */
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-14);
+  color: var(--text);
+  background: var(--bg);
+}
+
+.t-display { font-family: var(--font-display); font-weight: var(--fw-semibold); }
+.t-h1 { font-family: var(--font-display); font-size: var(--fs-26); font-weight: var(--fw-bold); }
+.t-h2 { font-family: var(--font-display); font-size: var(--fs-22); font-weight: var(--fw-bold); }
+.t-h3 { font-family: var(--font-display); font-size: var(--fs-20); font-weight: var(--fw-semibold); }
+.t-h4 { font-family: var(--font-display); font-size: var(--fs-16); font-weight: var(--fw-semibold); }
+.t-h5 { font-family: var(--font-display); font-size: var(--fs-15); font-weight: var(--fw-semibold); }
+.t-body { font-family: var(--font-body); font-size: var(--fs-13); font-weight: var(--fw-regular); }
+.t-meta { font-family: var(--font-body); font-size: var(--fs-12); color: var(--muted); }
+.t-caption { font-family: var(--font-body); font-size: var(--fs-11); color: var(--muted); }
+.t-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-10);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--muted);
+}

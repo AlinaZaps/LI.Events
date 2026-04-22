@@ -1,0 +1,114 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  MANAGER
+  APPROVER
+}
+
+enum ApprovalStatus {
+  DRAFT
+  SENT
+  COMPLETED
+}
+
+enum EventCategory {
+  CONFERENCE
+  SIDE_EVENT
+  HACKATHON
+  BD_DINNER
+  SPONSORSHIP
+}
+
+enum EventStatus {
+  PAST
+  UPCOMING
+  LIVE
+}
+
+model User {
+  id          String   @id
+  email       String   @unique
+  displayName String
+  role        Role
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  eventsCreated   Event[] @relation("EventCreatedBy")
+  eventsToApprove Event[] @relation("EventApprover")
+  eventsToNotify  Event[] @relation("EventNotify")
+}
+
+model Event {
+  id             String         @id @default(cuid())
+  title          String
+  description    String
+  startDate      DateTime
+  endDate        DateTime
+  location       String
+  approvalStatus ApprovalStatus @default(DRAFT)
+  approvalToken  String         @unique
+  archivedAt     DateTime?
+
+  category        EventCategory @default(CONFERENCE)
+  lifecycleStatus EventStatus   @default(UPCOMING)
+  budgetCents     Int           @default(0)
+  spentCents      Int           @default(0)
+
+  approverId String
+  approver   User   @relation("EventApprover", fields: [approverId], references: [id])
+
+  notifyUserId String?
+  notifyUser   User?   @relation("EventNotify", fields: [notifyUserId], references: [id])
+
+  createdById String
+  createdBy   User   @relation("EventCreatedBy", fields: [createdById], references: [id])
+
+  teams     EventTeam[]
+  attendees ApprovedAttendee[]
+  auditLogs AuditLog[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model EventTeam {
+  id                String @id @default(cuid())
+  eventId           String
+  event             Event  @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  hibobDepartmentId String
+  displayName       String
+
+  @@unique([eventId, hibobDepartmentId])
+}
+
+model ApprovedAttendee {
+  id              String   @id @default(cuid())
+  eventId         String
+  event           Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  hibobEmployeeId String
+  displayName     String
+  email           String
+  department      String
+  approvedAt      DateTime @default(now())
+
+  @@unique([eventId, hibobEmployeeId])
+}
+
+model AuditLog {
+  id          String   @id @default(cuid())
+  eventId     String
+  event       Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  actor       String
+  action      String
+  payloadJson Json?
+  createdAt   DateTime @default(now())
+
+  @@index([eventId, createdAt])
+}

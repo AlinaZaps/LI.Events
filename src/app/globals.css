@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   Brand + theme-invariant tokens (verbatim from design/tokens.css)
+   ============================================================ */
+:root {
+  --brand-accent: #5C67FF;
+  --brand-pink-raw: #F7C2FF;
+
+  --font-display: 'Syne', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --fs-9: 9px;
+  --fs-10: 10px;
+  --fs-11: 11px;
+  --fs-12: 12px;
+  --fs-13: 13px;
+  --fs-14: 14px;
+  --fs-15: 15px;
+  --fs-16: 16px;
+  --fs-17: 17px;
+  --fs-20: 20px;
+  --fs-22: 22px;
+  --fs-26: 26px;
+  --fs-28: 28px;
+
+  --tracking-tight: 0.05em;
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.1em;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 7px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 20px;
+  --radius-round: 50%;
+
+  --space-1: 4px;
+  --space-2: 6px;
+  --space-3: 8px;
+  --space-4: 10px;
+  --space-5: 12px;
+  --space-6: 14px;
+  --space-7: 16px;
+  --space-8: 18px;
+  --space-9: 20px;
+  --space-10: 24px;
+  --space-11: 28px;
+
+  --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 0.15s;
+  --dur-med: 0.2s;
+  --dur-slow: 0.25s;
+}
+
+/* ============================================================
+   LIGHT THEME (default)
+   ============================================================ */
+:root,
+:root[data-theme='light'],
+.light {
+  --bg: #f5f4ff;
+  --surface: #ffffff;
+  --surface-2: #f0efff;
+  --surface-3: #e8e7ff;
+
+  --border: rgba(92, 103, 255, 0.10);
+  --border-strong: rgba(92, 103, 255, 0.22);
+
+  --text: #16142e;
+  --muted: #7b78a8;
+
+  --accent: #5C67FF;
+  --accent-hover: #4450e8;
+  --accent-dim: rgba(92, 103, 255, 0.08);
+
+  --pink: #d966f5;
+  --pink-dim: rgba(217, 102, 245, 0.08);
+  --green: #00a36e;
+  --green-dim: rgba(0, 163, 110, 0.08);
+  --amber: #c47f00;
+  --amber-dim: rgba(196, 127, 0, 0.08);
+  --red: #d63b5a;
+
+  --overlay: rgba(22, 20, 46, 0.30);
+  --shadow-card: 0 4px 20px rgba(92, 103, 255, 0.10);
+  --shadow-card-hover: 0 6px 24px rgba(92, 103, 255, 0.10);
+  --shadow-primary: 0 2px 12px rgba(92, 103, 255, 0.30);
+  --shadow-panel: -8px 0 32px rgba(92, 103, 255, 0.08);
+  --shadow-glow: none;
+
+  --grad-brand: linear-gradient(135deg, #5C67FF, #F7C2FF);
+  --grad-bar: linear-gradient(90deg, #5C67FF, #d966f5);
+}
+
+/* ============================================================
+   DARK THEME
+   ============================================================ */
+:root[data-theme='dark'],
+.dark {
+  --bg: #0a0a12;
+  --surface: #10101c;
+  --surface-2: #17172a;
+  --surface-3: #1e1e35;
+
+  --border: rgba(92, 103, 255, 0.12);
+  --border-strong: rgba(92, 103, 255, 0.25);
+
+  --text: #f4f0ff;
+  --muted: #8880aa;
+
+  --accent: #5C67FF;
+  --accent-hover: #8891ff;
+  --accent-dim: rgba(92, 103, 255, 0.15);
+
+  --pink: #F7C2FF;
+  --pink-dim: rgba(247, 194, 255, 0.15);
+  --green: #6affcb;
+  --green-dim: rgba(106, 255, 203, 0.12);
+  --amber: #ffd97a;
+  --amber-dim: rgba(255, 217, 122, 0.12);
+  --red: #ff8fa3;
+
+  --overlay: rgba(0, 0, 0, 0.60);
+  --shadow-card: 0 6px 24px rgba(92, 103, 255, 0.10);
+  --shadow-card-hover: 0 6px 24px rgba(92, 103, 255, 0.20);
+  --shadow-primary: 0 0 18px rgba(92, 103, 255, 0.35);
+  --shadow-panel: none;
+  --shadow-glow: 0 0 18px rgba(92, 103, 255, 0.25);
+
+  --grad-brand: linear-gradient(135deg, #5C67FF, #F7C2FF);
+  --grad-bar: linear-gradient(90deg, #5C67FF, #F7C2FF);
+}
+
+/* ============================================================
+   Bridge tokens → Tailwind v4 utilities
+   ============================================================ */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-dim: var(--accent-dim);
+  --color-pink: var(--pink);
+  --color-pink-dim: var(--pink-dim);
+  --color-green: var(--green);
+  --color-green-dim: var(--green-dim);
+  --color-amber: var(--amber);
+  --color-amber-dim: var(--amber-dim);
+  --color-red: var(--red);
+  --color-overlay: var(--overlay);
+
+  /* shadcn semantic aliases → our tokens */
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--text);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--text);
+  --color-primary: var(--accent);
+  --color-primary-foreground: #ffffff;
+  --color-secondary: var(--surface-2);
+  --color-secondary-foreground: var(--text);
+  --color-muted-foreground: var(--muted);
+  --color-accent-foreground: var(--text);
+  --color-destructive: var(--red);
+  --color-destructive-foreground: #ffffff;
+  --color-input: var(--border-strong);
+  --color-ring: var(--accent);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-sans: var(--font-body);
+
+  --text-9: var(--fs-9);
+  --text-10: var(--fs-10);
+  --text-11: var(--fs-11);
+  --text-12: var(--fs-12);
+  --text-13: var(--fs-13);
+  --text-14: var(--fs-14);
+  --text-15: var(--fs-15);
+  --text-16: var(--fs-16);
+  --text-17: var(--fs-17);
+  --text-20: var(--fs-20);
+  --text-22: var(--fs-22);
+  --text-26: var(--fs-26);
+  --text-28: var(--fs-28);
+
+  --tracking-tight: var(--tracking-tight);
+  --tracking-wide: var(--tracking-wide);
+  --tracking-wider: var(--tracking-wider);
+
+  --radius-xs: var(--radius-xs);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-pill: var(--radius-pill);
+
+  --shadow-card: var(--shadow-card);
+  --shadow-card-hover: var(--shadow-card-hover);
+  --shadow-primary: var(--shadow-primary);
+  --shadow-panel: var(--shadow-panel);
+  --shadow-glow: var(--shadow-glow);
+
+  --ease-out: var(--ease-out);
+}
+
+/* ============================================================
+   Base type styles (verbatim helpers from tokens.css)
+   ============================================================ */
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-14);
+  color: var(--text);
+  background: var(--bg);
+}
+
+.t-display { font-family: var(--font-display); font-weight: var(--fw-semibold); }
+.t-h1 { font-family: var(--font-display); font-size: var(--fs-26); font-weight: var(--fw-bold); }
+.t-h2 { font-family: var(--font-display); font-size: var(--fs-22); font-weight: var(--fw-bold); }
+.t-h3 { font-family: var(--font-display); font-size: var(--fs-20); font-weight: var(--fw-semibold); }
+.t-h4 { font-family: var(--font-display); font-size: var(--fs-16); font-weight: var(--fw-semibold); }
+.t-h5 { font-family: var(--font-display); font-size: var(--fs-15); font-weight: var(--fw-semibold); }
+.t-body { font-family: var(--font-body); font-size: var(--fs-13); font-weight: var(--fw-regular); }
+.t-meta { font-family: var(--font-body); font-size: var(--fs-12); color: var(--muted); }
+.t-caption { font-family: var(--font-body); font-size: var(--fs-11); color: var(--muted); }
+.t-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-10);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--muted);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+  }
+}

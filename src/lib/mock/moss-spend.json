@@ -1,0 +1,375 @@
+{
+  "_meta": {
+    "source": "LI.FI Marketing Spend Analysis Q1 2026",
+    "period": "Q1 2026",
+    "currency": "EUR",
+    "totalSpend": 549606.34,
+    "conferenceSpend": 338422.24,
+    "sanitized": true,
+    "sanitizationNotes": "Employee/traveler names replaced with generic labels (traveler_1, traveler_2, ...). Vendor invoice numbers omitted. Aggregate totals and line-item amounts preserved as recorded."
+  },
+  "categories": [
+    {
+      "category": "Conference Travel",
+      "amountEur": 134877.44,
+      "pct": 0.2454
+    },
+    {
+      "category": "Conference Tickets",
+      "amountEur": 10578.56,
+      "pct": 0.0192
+    },
+    {
+      "category": "Conference Events",
+      "amountEur": 101021.51,
+      "pct": 0.1838
+    },
+    {
+      "category": "Sponsorships",
+      "amountEur": 91944.73,
+      "pct": 0.1673
+    },
+    {
+      "category": "Social Media Marketing Agency (MOM)",
+      "amountEur": 85873.3,
+      "pct": 0.1562
+    },
+    {
+      "category": "SEO & Marketing Agencies",
+      "amountEur": 24578.52,
+      "pct": 0.0447
+    },
+    {
+      "category": "Content & Media Partnerships",
+      "amountEur": 34369.17,
+      "pct": 0.0625
+    },
+    {
+      "category": "Content & Community",
+      "amountEur": 3151.39,
+      "pct": 0.0057
+    },
+    {
+      "category": "PR Agency (M Group)",
+      "amountEur": 40440.51,
+      "pct": 0.0736
+    },
+    {
+      "category": "Merch & Events",
+      "amountEur": 4196.34,
+      "pct": 0.0076
+    },
+    {
+      "category": "Video Production",
+      "amountEur": 11874.23,
+      "pct": 0.0216
+    },
+    {
+      "category": "Software & Tools",
+      "amountEur": 3686.29,
+      "pct": 0.0067
+    },
+    {
+      "category": "Entertainment/BD Dinners",
+      "amountEur": 3014.35,
+      "pct": 0.0055
+    }
+  ],
+  "events": [
+    {
+      "id": "ethdenver-2026",
+      "name": "ETHDenver 2026",
+      "travel": 48532.74,
+      "tickets": 0.0,
+      "eventsCost": 0.0,
+      "sponsorships": 17917.83,
+      "total": 66450.57,
+      "attendees": 8,
+      "costPerPerson": 8306.32
+    },
+    {
+      "id": "ethcc-cannes-2026",
+      "name": "EthCC Cannes 2026",
+      "travel": 49923.33,
+      "tickets": 0.0,
+      "eventsCost": 60612.0,
+      "sponsorships": 0.0,
+      "total": 110535.33,
+      "attendees": 12,
+      "costPerPerson": 9211.28
+    },
+    {
+      "id": "das-nyc-2026",
+      "name": "DAS NYC 2026",
+      "travel": 14887.29,
+      "tickets": 10578.56,
+      "eventsCost": 0.0,
+      "sponsorships": 0.0,
+      "total": 25465.85,
+      "attendees": 2,
+      "costPerPerson": 12732.92
+    },
+    {
+      "id": "consensus-hong-kong-2026",
+      "name": "Consensus Hong Kong 2026",
+      "travel": 9243.96,
+      "tickets": 0.0,
+      "eventsCost": 0.0,
+      "sponsorships": 4248.64,
+      "total": 13492.6,
+      "attendees": 3,
+      "costPerPerson": 4497.53
+    },
+    {
+      "id": "cfc-st-moritz-2026",
+      "name": "CFC St. Moritz 2026",
+      "travel": 12290.12,
+      "tickets": 0.0,
+      "eventsCost": 0.0,
+      "sponsorships": 0.0,
+      "total": 12290.12,
+      "attendees": 2,
+      "costPerPerson": 6145.06
+    }
+  ],
+  "lineItems": [
+    {
+      "event": "ETHDenver 2026",
+      "label": "traveler_1",
+      "category": "travel",
+      "amount": 14269.11,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "ETHDenver 2026",
+      "label": "traveler_2",
+      "category": "travel",
+      "amount": 14202.71,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "ETHDenver 2026",
+      "label": "traveler_3",
+      "category": "travel",
+      "amount": 5454.98,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "ETHDenver 2026",
+      "label": "traveler_4",
+      "category": "travel",
+      "amount": 3958.17,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "ETHDenver 2026",
+      "label": "traveler_5",
+      "category": "travel",
+      "amount": 3827.81,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "ETHDenver 2026",
+      "label": "traveler_6",
+      "category": "travel",
+      "amount": 3423.46,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "ETHDenver 2026",
+      "label": "traveler_7",
+      "category": "travel",
+      "amount": 2726.43,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "ETHDenver 2026",
+      "label": "traveler_8",
+      "category": "travel",
+      "amount": 670.07,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "ETHDenver 2026",
+      "label": "sponsorships",
+      "category": "sponsorships",
+      "amount": 17917.83,
+      "description": "Sponsorship Contribution - HL : EUR 8,614; Bronze Partnership - Multichai: EUR 5"
+    },
+    {
+      "event": "EthCC Cannes 2026",
+      "label": "traveler_1",
+      "category": "travel",
+      "amount": 26008.63,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "EthCC Cannes 2026",
+      "label": "traveler_2",
+      "category": "travel",
+      "amount": 4365.25,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "EthCC Cannes 2026",
+      "label": "traveler_3",
+      "category": "travel",
+      "amount": 2840.28,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "EthCC Cannes 2026",
+      "label": "traveler_4",
+      "category": "travel",
+      "amount": 2769.55,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "EthCC Cannes 2026",
+      "label": "traveler_5",
+      "category": "travel",
+      "amount": 2769.02,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "EthCC Cannes 2026",
+      "label": "traveler_6",
+      "category": "travel",
+      "amount": 2144.88,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "EthCC Cannes 2026",
+      "label": "traveler_7",
+      "category": "travel",
+      "amount": 2028.68,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "EthCC Cannes 2026",
+      "label": "traveler_8",
+      "category": "travel",
+      "amount": 2004.7,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "EthCC Cannes 2026",
+      "label": "traveler_9",
+      "category": "travel",
+      "amount": 1966.19,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "EthCC Cannes 2026",
+      "label": "traveler_10",
+      "category": "travel",
+      "amount": 1162.93,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "EthCC Cannes 2026",
+      "label": "traveler_11",
+      "category": "travel",
+      "amount": 1001.0,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "EthCC Cannes 2026",
+      "label": "traveler_12",
+      "category": "travel",
+      "amount": 862.22,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "EthCC Cannes 2026",
+      "label": "conference_events_venue",
+      "category": "events",
+      "amount": 60612.0,
+      "description": "ETHCC Conference: EUR 47,244; ETHCC Event: EUR 5,400; ETHCC: EUR 4,200"
+    },
+    {
+      "event": "DAS NYC 2026",
+      "label": "traveler_1",
+      "category": "travel",
+      "amount": 10269.62,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "DAS NYC 2026",
+      "label": "traveler_2",
+      "category": "travel",
+      "amount": 4617.67,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "DAS NYC 2026",
+      "label": "conference_tickets",
+      "category": "tickets",
+      "amount": 10578.56,
+      "description": "4x tickets purchased for the DAS NYC 2026 conferen"
+    },
+    {
+      "event": "Consensus Hong Kong 2026",
+      "label": "traveler_1",
+      "category": "travel",
+      "amount": 4236.83,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "Consensus Hong Kong 2026",
+      "label": "traveler_2",
+      "category": "travel",
+      "amount": 3454.28,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "Consensus Hong Kong 2026",
+      "label": "traveler_3",
+      "category": "travel",
+      "amount": 1552.85,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "Consensus Hong Kong 2026",
+      "label": "sponsorships",
+      "category": "sponsorships",
+      "amount": 4248.64,
+      "description": "Sponsorship agreement signed b: EUR 4,249"
+    },
+    {
+      "event": "Davos (CFC St. Moritz 2026)",
+      "label": "traveler_1",
+      "category": "travel",
+      "amount": 9817.94,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "Davos (CFC St. Moritz 2026)",
+      "label": "traveler_2",
+      "category": "travel",
+      "amount": 2472.18,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "ETHGlobal 2026 Core Membership \u2014",
+      "label": "traveler_1",
+      "category": "travel",
+      "amount": 39627.16,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "Counterfactual Inc. 2026 Core Membership",
+      "label": "traveler_1",
+      "category": "travel",
+      "amount": 30151.1,
+      "description": "Flight + Hotel"
+    },
+    {
+      "event": "Counterfactual Inc. 2026 Core Membership",
+      "label": "traveler_2",
+      "category": "travel",
+      "amount": 69778.26,
+      "description": "Flight + Hotel"
+    }
+  ]
+}
