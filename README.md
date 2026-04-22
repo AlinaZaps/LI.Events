@@ -56,7 +56,7 @@ pnpm prisma migrate dev      # migrations + seed
 pnpm dev
 ```
 
-Open http://localhost:3000 and you're in.
+Open http://localhost:3333 and you're in.
 
 > Postgres 16 is keg-only on Homebrew. To get `psql` on your PATH outside this project:
 > ```
@@ -86,7 +86,7 @@ All keys live in `.env.local` (git-ignored). See [`.env.example`](./.env.example
 | `HIBOB_SERVICE_USER_ID`, `HIBOB_API_TOKEN` | HiBob service account credentials |
 | `EMAIL_MODE` | `log` (dev, prints to console) or `resend` (production) |
 | `RESEND_API_KEY`, `EMAIL_FROM` | Required when `EMAIL_MODE=resend` |
-| `APP_BASE_URL` | Base URL used to build approval links (e.g. `http://localhost:3000`) |
+| `APP_BASE_URL` | Base URL used to build approval links (e.g. `http://localhost:3333`) |
 
 ## Project layout
 
