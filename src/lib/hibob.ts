@@ -42,7 +42,7 @@ function authHeader(): string {
   const token = process.env.HIBOB_API_TOKEN?.trim();
   if (!id || !token) {
     throw new HibobConfigError(
-      "HIBOB_SERVICE_USER_ID and HIBOB_API_TOKEN must be set (see .env.example; values live in 1Password).",
+      "HIBOB_SERVICE_USER_ID and HIBOB_API_TOKEN must be set (see .env.example).",
     );
   }
   return `Basic ${Buffer.from(`${id}:${token}`).toString("base64")}`;
